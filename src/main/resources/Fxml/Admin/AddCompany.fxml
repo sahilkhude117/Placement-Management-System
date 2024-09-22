@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="750.0" prefWidth="850.0" stylesheets="@../../Styles/StudentServices.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pms.Controllers.Admin.AddCompanyController">
+    <VBox layoutX="28.0" layoutY="-41.0" prefHeight="69.0" prefWidth="864.0" styleClass="title_container" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="0.0">
+        <Label styleClass="title" text="Add Company" translateY="5.0" />
+    </VBox>
+    <AnchorPane layoutX="310.0" layoutY="282.0" prefHeight="200.0" prefWidth="200.0" styleClass="title_container" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="120.0">
+        <padding>
+            <Insets left="25.0" />
+        </padding>
+        <Label layoutX="21.0" layoutY="26.0" text="Company Name :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+        <Label layoutX="20.0" layoutY="57.0" text="Company Id :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="65.0" />
+        <Label layoutX="19.0" layoutY="92.0" text="Co-Ordinator Name :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="105.0" />
+        <TextField fx:id="addCompanyName_fld" layoutX="145.0" layoutY="22.0" prefWidth="200.0" promptText="Enter Company Name" styleClass="textfield" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="20.0" />
+        <TextField fx:id="addCompanyId_fld" layoutX="143.0" layoutY="53.0" prefWidth="150.0" promptText="Enter Company Id" styleClass="textfield" text="C" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="60.0" />
+        <TextField fx:id="addCompanyCoordinator_fld" layoutX="152.0" layoutY="113.0" prefHeight="30.0" prefWidth="186.0" promptText="Enter Name Of Coordinator" styleClass="textfield" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="100.0" />
+        <Label layoutX="14.0" layoutY="170.0" text="Co-Ordinator Phone :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="150.0" />
+        <TextField fx:id="addCompanyPhone_fld" layoutX="146.0" layoutY="170.0" prefWidth="200.0" promptText="Enter Contact Number" styleClass="textfield" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="140.0" />
+        <Label layoutX="22.0" layoutY="248.0" text="Email :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="190.0" />
+        <TextField fx:id="addCompanyEmail_fld" layoutX="145.6" layoutY="215.2" prefHeight="30.0" prefWidth="270.0" promptText="Enter Email" styleClass="textfield" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="185.0" />
+        <Label layoutX="24.0" layoutY="342.0" text="Drive Date :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="245.0" />
+        <Label layoutX="28.0" layoutY="499.0" text="Address (optional) :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="340.0" />
+        <Button fx:id="addCompanySave_btn" layoutX="286.0" layoutY="480.0" mnemonicParsing="false" prefWidth="220.0" text="Save" AnchorPane.rightAnchor="294.4000000000001">
+            <graphic>
+                <FontAwesomeIconView glyphName="SAVE" size="15" />
+            </graphic>
+        </Button>
+        <DatePicker fx:id="addCompanyDate_dt" layoutX="161.6" layoutY="266.4" prefHeight="30.0" prefWidth="175.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="240.0" />
+        <Label layoutX="39.0" layoutY="397.0" text="Highest Package :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="300.0" />
+        <TextField fx:id="addCompanyHighestPackage_fld" layoutX="146.0" layoutY="309.0" prefHeight="30.0" prefWidth="220.0" promptText="Enter Highest Package Offered" styleClass="textfield" />
+        <TextArea fx:id="addCompanyAddress_fld" layoutX="146.0" layoutY="348.0" prefHeight="80.0" prefWidth="500.0" promptText="Enter Address" styleClass="textfield" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="340.0" />
+    </AnchorPane>
+    <Button fx:id="addCompanyBack_btn" layoutX="25.0" layoutY="83.0" mnemonicParsing="false" text="Back" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="80.0">
+        <graphic>
+            <FontAwesomeIconView glyphName="ARROW_LEFT" size="15" />
+        </graphic>
+    </Button>
+</AnchorPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="750.0" prefWidth="850.0" stylesheets="@../../Styles/Students.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pms.Controllers.Admin.CompanyController">
+    <VBox layoutX="28.0" layoutY="-41.0" prefHeight="69.0" prefWidth="864.0" styleClass="title_container" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="0.0">
+        <Label styleClass="title" text="Company" translateY="5.0" />
+    </VBox>
+
+    <AnchorPane prefHeight="60.0" prefWidth="800.0" styleClass="cell_container" stylesheets="@../../Styles/CompnayCell.css" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="120.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+        <VBox alignment="CENTER" prefHeight="50.0" prefWidth="25.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="5.0">
+            <Label text="Id" />
+        </VBox>
+        <VBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="5.0" prefHeight="50.0" prefWidth="103.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="5.0">
+            <Label styleClass="name" text="Company Name" />
+        </VBox>
+        <VBox alignment="CENTER_LEFT" layoutX="135.0" layoutY="5.0" prefHeight="50.0" prefWidth="33.0" AnchorPane.bottomAnchor="4.599999999999994" AnchorPane.leftAnchor="135.0" AnchorPane.topAnchor="5.0" />
+        <VBox alignment="CENTER_LEFT" layoutX="186.0" layoutY="5.0" prefHeight="50.0" prefWidth="122.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="186.0" AnchorPane.topAnchor="5.0">
+            <Label prefHeight="20.0" prefWidth="94.0" styleClass="coordinator" text="Co-ordinator" />
+        </VBox>
+        <VBox alignment="CENTER" layoutX="427.2" layoutY="5.0" prefHeight="50.0" prefWidth="103.0" AnchorPane.leftAnchor="427.0">
+            <VBox alignment="CENTER" prefHeight="50.0" prefWidth="110.0">
+                <Label styleClass="phone" text="Phone" />
+            </VBox>
+        </VBox>
+        <VBox alignment="CENTER_LEFT" layoutX="317.0" layoutY="5.0" prefHeight="50.0" prefWidth="122.0">
+            <Label text="Email" />
+        </VBox>
+    </AnchorPane>
+
+    <Label layoutX="30.0" layoutY="88.0" styleClass="title1" text="Companies List">
+        <font>
+            <Font name="Calibri Light" size="14.0" />
+        </font>
+    </Label>
+    <Button fx:id="addCompany_btn" layoutX="710.0" layoutY="78.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="Add New" AnchorPane.rightAnchor="30.399999999999977" AnchorPane.topAnchor="78.0">
+        <graphic>
+            <FontAwesomeIconView glyphName="PLUS" size="15" />
+        </graphic>
+    </Button>
+    <ListView fx:id="companyListView" layoutX="325.0" layoutY="275.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="190.0" />
+</AnchorPane>

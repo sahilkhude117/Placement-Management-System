@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="750.0" prefWidth="850.0" stylesheets="@../../Styles/Students.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pms.Controllers.Admin.StudentsController">
+    <VBox layoutX="28.0" layoutY="-41.0" prefHeight="69.0" prefWidth="864.0" styleClass="title_container" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="0.0">
+        <Label styleClass="title" text="Students" translateY="5.0" />
+    </VBox>
+
+    <AnchorPane prefHeight="60.0" prefWidth="740.0" styleClass="cell_container" stylesheets="@../../Styles/StudentsCell.css" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="120.0">
+        <VBox alignment="CENTER" prefHeight="50.0" prefWidth="25.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+            <Label text="Id" />
+        </VBox>
+        <VBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="5.0" prefHeight="50.0" prefWidth="138.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="5.0">
+            <Label styleClass="name" text="Name" />
+        </VBox>
+        <VBox alignment="CENTER_LEFT" layoutX="181.0" layoutY="5.0" prefHeight="50.0" prefWidth="50.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="5.0">
+            <Label styleClass="dept" text="Dept" />
+        </VBox>
+        <VBox alignment="CENTER_LEFT" layoutX="230.0" layoutY="5.0" prefHeight="50.0" prefWidth="35.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="230.0" AnchorPane.topAnchor="5.0">
+            <Label text="Gpa" />
+        </VBox>
+        <VBox alignment="CENTER" layoutX="266.0" layoutY="5.0" prefHeight="50.0" prefWidth="80.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="265.0" AnchorPane.topAnchor="5.0">
+            <Label styleClass="phone" text="Phone" />
+        </VBox>
+        <VBox alignment="CENTER" layoutX="345.0" layoutY="5.0" prefHeight="50.0" prefWidth="118.0" AnchorPane.leftAnchor="350.0">
+            <Label styleClass="status" text="Status" />
+        </VBox>
+        <Label layoutX="745.0" layoutY="22.0" text="Options" AnchorPane.rightAnchor="30.0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+    </AnchorPane>
+
+    <Label layoutX="30.0" layoutY="88.0" styleClass="title1" text="Students List">
+        <font>
+            <Font name="Calibri Light" size="14.0" />
+        </font>
+    </Label>
+    <Button fx:id="addStudents_btn" layoutX="710.0" layoutY="78.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="Add New" AnchorPane.rightAnchor="30.399999999999977" AnchorPane.topAnchor="78.0">
+        <graphic>
+            <FontAwesomeIconView glyphName="PLUS" size="15" />
+        </graphic>
+    </Button>
+    <ListView fx:id="studentsListView" layoutX="325.0" layoutY="275.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="190.0" />
+</AnchorPane>

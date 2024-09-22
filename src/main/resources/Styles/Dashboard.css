@@ -1,0 +1,77 @@
+.title_container {
+    -fx-background-color: #FFFFFFFF;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+    -fx-padding: 15;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 0 0 8 8 ;
+}
+.title {
+    -fx-font-family: "Lexend";
+    -fx-font-weight: 700;
+    -fx-font-size: 20px;
+    -fx-line-spacing: 48px;
+    -fx-text-fill: #6D31EDFF;
+}
+
+.container {
+    -fx-background-color: #F5F1FEFF;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-color: grey;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+    -fx-padding: 15;
+}
+
+.container_gradient {
+    -fx-background-color: linear-gradient(to left, #6D31EDFF,#9A73F0FF);
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-color: grey;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+    -fx-padding: 15;
+}
+
+.placed {
+    -fx-font-family: "Calibri Light";
+    -fx-font-size: 12px;
+}
+
+.value {
+    -fx-font-family: lexend;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.title1 {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-font-family: lexend;
+}
+
+.button {
+    -fx-pref-height: 30px;
+    -fx-padding: 0 10px;
+    -fx-font-family: "Manrope";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-color: #6D31EDFF;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+    -fx-background-radius: 2px;
+}
+
+.button:hover {
+    -fx-background-color: #5113D7FF;
+    -fx-cursor: hand;
+}
+
+.button:pressed {
+    -fx-background-color: #3F0EA6FF;
+}
+
+.button:disabled {
+    -fx-opacity: 0.4;
+}
+
+

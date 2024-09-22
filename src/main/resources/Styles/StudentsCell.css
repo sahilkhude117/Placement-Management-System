@@ -1,0 +1,94 @@
+.cell_container {
+    -fx-background-color: #F5F1FEFF;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+}
+
+.name {
+    -fx-font-family: "Manrope";
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #171A1FFF;
+    -fx-line-spacing: 8px;
+    -fx-wrap-text: true;
+}
+
+.dept {
+        -fx-font-family: "Manrope";
+        -fx-font-size: 12px;
+        -fx-font-weight: normal;
+        -fx-text-fill: #171A1FFF;
+        -fx-line-spacing: 8px;
+    -fx-wrap-text: true;
+}
+
+.phone {
+    -fx-text-fill: #aaaaaa;
+    -fx-font-size: 12px;
+
+}
+
+.status {
+     -fx-font-weight: bold;
+     -fx-text-fill: green;
+    -fx-font-size: 13px;
+    -fx-wrap-text: true;
+}
+
+.button {
+    -fx-pref-height: 30px;
+    -fx-padding: 0 10px;
+    -fx-font-family: "Manrope";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-color: #6D31EDFF;
+    -fx-border-width: 0;
+    -fx-background-radius: 2px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+}
+
+.button:hover {
+    -fx-background-color: #5113D7FF;
+    -fx-cursor: hand;
+}
+
+.button:pressed {
+    -fx-background-color: #3F0EA6FF;
+}
+
+.button:disabled {
+    -fx-opacity: 0.4;
+}
+
+
+.delete_button {
+    -fx-pref-height: 30px;
+    -fx-padding: 0 10px;
+    -fx-font-family: "Manrope";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-color: #565D6DFF;
+    -fx-border-width: 0;
+    -fx-background-radius: 2px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+}
+
+.delete_button:hover {
+    -fx-background-color: red;
+    -fx-cursor: hand;
+}
+
+.delete_button:pressed {
+    -fx-background-color: red;
+}
+
+.delete_button:disabled {
+    -fx-opacity: 0.4;
+}
+
+
+

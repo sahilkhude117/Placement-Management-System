@@ -1,0 +1,38 @@
+.pie-chart {
+    -fx-border-color: #333;
+    -fx-border-width: 2px;
+    -fx-padding: 1px;
+}
+
+.pie-chart .chart-series {
+    -fx-stroke: #ffffff;
+    -fx-stroke-width: 1px;
+}
+
+.pie-chart .chart-legend {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1px;
+}
+
+.pie-chart .chart-legend-item {
+    -fx-text-fill: #000;
+    -fx-font-size: 12px;
+}
+
+.pie-chart .chart-title {
+    -fx-font-size: 18px;
+    -fx-text-fill: #000;
+    -fx-padding: 5px;
+}
+
+.pie-chart .chart-pie {
+    -fx-background-color: transparent;
+    -fx-radius: 500px; /* Adjust size of the whole circle */
+}
+
+.pie-chart .chart-pie .slice {
+    -fx-pie-fill: #6D31EDFF; /* Placed */
+}
+
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="60.0" prefWidth="740.0" styleClass="cell_container" stylesheets="@../../Styles/StudentsCell.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+   <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="25.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="5.0">
+      <Label fx:id="Students_SrNo_lbl" text="1">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+   </VBox>
+   <VBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="5.0" prefHeight="50.0" prefWidth="150.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="5.0">
+      <Label fx:id="Students_Name_lbl" styleClass="name" text="Sahil Khude" />
+   </VBox>
+   <VBox alignment="CENTER_LEFT" layoutX="181.0" layoutY="5.0" prefHeight="50.0" prefWidth="50.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="5.0">
+      <Label fx:id="Students_Dept_lbl" styleClass="dept" text="IT" />
+   </VBox>
+   <VBox alignment="CENTER_LEFT" layoutX="230.0" layoutY="5.0" prefHeight="50.0" prefWidth="35.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="230.0" AnchorPane.topAnchor="5.0">
+      <Label fx:id="Students_Gpa_lbl" text="9.56" />
+   </VBox>
+   <VBox alignment="CENTER" layoutX="266.0" layoutY="5.0" prefHeight="50.0" prefWidth="80.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="265.0" AnchorPane.topAnchor="5.0">
+      <Label fx:id="Students_Phone_lbl" styleClass="phone" text="8465456584" />
+   </VBox>
+   <VBox alignment="CENTER_LEFT" layoutX="380.0" layoutY="5.0" prefHeight="50.0" prefWidth="90.0" AnchorPane.leftAnchor="380.0">
+      <Label fx:id="Student_Status_lbl" styleClass="status" text="Placed" />
+   </VBox>
+   <Button fx:id="Students_View_lbl" layoutX="499.0" layoutY="18.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" text="View" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="15.0">
+      <graphic>
+         <FontAwesomeIconView glyphName="EYE" size="15" styleClass="button" />
+      </graphic>
+   </Button>
+   <Button fx:id="Students_Edit_btn" layoutX="562.0" layoutY="18.0" mnemonicParsing="false" prefWidth="80.0" text="Edit" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="15.0">
+      <graphic>
+         <FontAwesomeIconView glyphName="PENCIL" size="15" />
+      </graphic>
+   </Button>
+   <Button fx:id="Students_Delete_btn" layoutX="665.0" layoutY="18.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="delete_button" text="Delete" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
+      <graphic>
+         <FontAwesomeIconView glyphName="TRASH" size="15" wrappingWidth="13.385692596435547" />
+      </graphic>
+   </Button>
+</AnchorPane>

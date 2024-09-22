@@ -1,0 +1,99 @@
+.container {
+    -fx-background-color: #FFFFFFFF;
+    -fx-background-radius: 0px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+}
+
+.vbox1{
+    -fx-alignment: CENTER;
+}
+
+.title {
+    -fx-font-family: "Lexend";
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-fill: #6D31EDFF;
+}
+
+.sidebar-menu {
+    -fx-spacing: 12px;
+    -fx-padding: 12px;
+    -fx-background-color: #FFFFFF;
+    -fx-alignment: top-left;
+}
+
+/* Menu Bar Button */
+.admin-menu-button {
+    -fx-alignment: CENTER_LEFT;
+    -fx-background-color: white;
+    -fx-text-fill: #565D6DFF;
+    -fx-pref-width: 160px;
+    -fx-pref-height: 40px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 2);
+    -fx-cursor: hand;
+}
+
+.admin-menu-button-selected {
+    -fx-alignment: CENTER_LEFT;
+    -fx-background-color: #6D31EDFF;
+    -fx-text-fill: white;
+    -fx-pref-width: 160px;
+    -fx-pref-height: 40px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 15, 0, 0, 4);
+}
+
+.admin-menu-button:hover {
+    -fx-background-color: #f1f1f1;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 12, 0, 0, 4);
+    -fx-pref-width: 160px;
+    -fx-pref-height: 40px;
+    -fx-padding: 10px 20px;
+}
+
+
+.alertButton {
+    -fx-alignment: CENTER_LEFT;
+    -fx-background-color: #565D6DFF;
+    -fx-text-fill: white;
+    -fx-pref-width: 140px;
+    -fx-pref-height: 40px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+    -fx-cursor: hand;
+}
+.alertButton:hover {
+    -fx-background-color: red;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 12, 0, 0, 4);
+}
+
+.alertButton-selected {
+    -fx-alignment: CENTER_LEFT;
+    -fx-background-color: red;
+    -fx-text-fill: Black;
+    -fx-pref-width: 140px;
+    -fx-pref-height: 40px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+    -fx-cursor: hand;
+}
+
+
+
+
+
+
+
+
