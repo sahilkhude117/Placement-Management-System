@@ -31,10 +31,7 @@
 }
 
 .status {
-     -fx-font-weight: bold;
-     -fx-text-fill: green;
-    -fx-font-size: 13px;
-    -fx-wrap-text: true;
+    -fx-font-weight: bold;
 }
 
 .button {

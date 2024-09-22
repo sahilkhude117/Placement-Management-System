@@ -46,8 +46,8 @@ public class EditStudentsController implements Initializable {
 
         editStudentsDept_fld.setItems(FXCollections.observableArrayList(
                 "IT",
-                "Computer Science",
-                "Mechanical",
+                "Comps",
+                "Mech",
                 "EXTC"
         ));
 

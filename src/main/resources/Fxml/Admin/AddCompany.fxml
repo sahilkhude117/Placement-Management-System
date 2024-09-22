@@ -36,7 +36,7 @@
             </graphic>
         </Button>
         <DatePicker fx:id="addCompanyDate_dt" layoutX="161.6" layoutY="266.4" prefHeight="30.0" prefWidth="175.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="240.0" />
-        <Label layoutX="39.0" layoutY="397.0" text="Highest Package :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="300.0" />
+        <Label layoutX="39.0" layoutY="397.0" text="Highest Package (Lpa) :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="300.0" />
         <TextField fx:id="addCompanyHighestPackage_fld" layoutX="146.0" layoutY="309.0" prefHeight="30.0" prefWidth="220.0" promptText="Enter Highest Package Offered" styleClass="textfield" />
         <TextArea fx:id="addCompanyAddress_fld" layoutX="146.0" layoutY="348.0" prefHeight="80.0" prefWidth="500.0" promptText="Enter Address" styleClass="textfield" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="340.0" />
     </AnchorPane>

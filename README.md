@@ -1,19 +1,31 @@
-﻿# Placement-Management-System
+# Placement Management System
 
-Description
-The Placement Management System is an administrative application designed to efficiently manage and store placement records for educational institutions. This system empowers administrators to maintain comprehensive data on students, placed students, and companies visiting for placements, while providing analytical insights into placement activities.
+## Project Overview
+The Placement Management System is an admin-focused application designed to streamline the management of placement records. This system enables administrators to efficiently store and analyze data related to students, placed students, and companies visiting the institution.
 
-Key Features
-Student Records Management: Admins can add, edit, and manage records for students, keeping track of their details and status.
-Placed Students Tracking: Easily manage and update the records of students who have successfully secured placements.
-Company Information Management: Store and update profiles of companies participating in the placement process.
-Analytics Dashboard: Gain insights into placement trends, including statistics on student placements and company engagements.
-User-Friendly Interface: A simple and intuitive JavaFX interface for easy navigation and management.
-Technologies Used
-Frontend: JavaFX for a rich desktop application experience.
-Backend: Java for business logic and MySQL for database management.
-Version Control: Git for source code management and collaboration.
-Use Cases
-Admin Management: Administrators can efficiently store and manage records of students, companies, and placements.
-Data Analytics: Provides analytical capabilities to help admins understand placement trends and improve processes.
-Record Updates: Admins can easily update student and company records as necessary.
+## Features
+- **Student Data Management**: 
+  - Add, edit, and delete student records.
+  - View comprehensive student profiles.
+  
+- **Placed Students Management**: 
+  - Track and manage records of students who have secured placements.
+  - Generate analytics on placement statistics.
+
+- **Company Records Management**: 
+  - Maintain a database of companies participating in campus placements.
+  - Add, edit, and remove company information.
+
+- **Analytics Dashboard**: 
+  - Access real-time data insights regarding placements.
+  - Visual representations of placement trends and statistics.
+
+## Use Cases
+- **Administering Student Records**: Admins can manage the complete lifecycle of student records from entry to graduation.
+- **Placement Tracking**: Facilitates tracking of which students have been placed, ensuring accurate records for future reference.
+- **Company Collaboration**: Provides a platform for managing company details that are crucial for organizing placement events.
+
+## Technologies Used
+- Java
+- JavaFX for the user interface
+- MySQL for the database management

@@ -27,7 +27,7 @@
         <TextField fx:id="addPSCompany_fld" layoutX="152.0" layoutY="113.0" prefHeight="30.0" prefWidth="186.0" promptText="Enter Company Name" styleClass="textfield" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="100.0" />
         <Label layoutX="14.0" layoutY="170.0" text="Role :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="150.0" />
         <TextField fx:id="addPSRoll_fld" layoutX="146.0" layoutY="170.0" prefWidth="200.0" promptText="Enter Role" styleClass="textfield" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="140.0" />
-        <Label layoutX="22.0" layoutY="248.0" text="Package :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="190.0" />
+        <Label layoutX="22.0" layoutY="248.0" text="Package (Lpa) :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="190.0" />
         <TextField fx:id="addPSPackage_fld" layoutX="146.0" layoutY="256.0" prefWidth="100.0" promptText="Enter Package" styleClass="textfield" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="185.0" />
         <Label layoutX="24.0" layoutY="342.0" text="Joining Date :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="245.0" />
         <Label layoutX="28.0" layoutY="499.0" text="Address (optional) :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="340.0" />
@@ -43,7 +43,7 @@
       <TextField fx:id="addPSPhone_fld" layoutX="146.0" layoutY="309.0" promptText="Enter Phone Number" styleClass="textfield" />
       <TextArea fx:id="addPSAddress_fld" layoutX="146.0" layoutY="348.0" prefHeight="80.0" prefWidth="500.0" promptText="Enter Address" styleClass="textfield" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="340.0" />
       <Label layoutX="428.0" layoutY="35.0" text="Students Id :" />
-      <TextField fx:id="addPSId_fld" layoutX="515.0" layoutY="29.0" prefHeight="30.0" prefWidth="100.0" promptText="Enter Id" styleClass="textfield" />
+      <TextField fx:id="addPSId_fld" layoutX="515.0" layoutY="29.0" prefHeight="30.0" prefWidth="100.0" promptText="Enter Id" styleClass="textfield" text="S" />
     </AnchorPane>
     <Button fx:id="addPSBack_btn" layoutX="25.0" layoutY="83.0" mnemonicParsing="false" text="Back" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="80.0">
         <graphic>

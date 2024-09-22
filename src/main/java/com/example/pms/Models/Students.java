@@ -17,8 +17,9 @@ public class Students {
     private final DoubleProperty studentClass10;
     private final DoubleProperty studentClass12;
     private final StringProperty studentId;
+    private final ObjectProperty<LocalDate> studentDate;
 
-    public Students(String studentName, String studentDept, Double studentGpa, String studentSkills, String studentAddress, String studentPhone, String studentEmail, String studentStatus, Double studentClass10, Double studentClass12,String studentId) {
+    public Students(String studentName, String studentDept, Double studentGpa, String studentSkills, String studentAddress, String studentPhone, String studentEmail, String studentStatus, Double studentClass10, Double studentClass12,String studentId ) {
         this.studentName = new SimpleStringProperty(this, "StudentName", studentName);
         this.studentDept = new SimpleStringProperty(this, "StudentDept", studentDept);
         this.studentGpa = new SimpleDoubleProperty(this, "StudentGpa", studentGpa);
@@ -30,6 +31,7 @@ public class Students {
         this.studentClass10 = new SimpleDoubleProperty(this, "StudentClass10", studentClass10);
         this.studentClass12 = new SimpleDoubleProperty(this, "StudentClass12", studentClass12);
         this.studentId = new SimpleStringProperty(this, "StudentID", studentId);
+        this.studentDate = new SimpleObjectProperty<>(this, "StudentDate", LocalDate.now());
     }
 
     // Getters for properties
@@ -44,4 +46,5 @@ public class Students {
     public DoubleProperty studentClass10Property() { return this.studentClass10; }
     public DoubleProperty studentClass12Property() { return this.studentClass12; }
     public StringProperty studentIDProperty() { return this.studentId; }
+    public ObjectProperty<LocalDate> studentDateProperty() { return this.studentDate; }
 }

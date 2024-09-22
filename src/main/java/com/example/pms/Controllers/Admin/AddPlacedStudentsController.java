@@ -148,10 +148,11 @@ public class AddPlacedStudentsController implements Initializable {
         String id = addPSId_fld.getText();
 
         // Validate input data
-        if (name.isEmpty() || dept.isEmpty() || company.isEmpty() || role.isEmpty() || packageAmount.isEmpty() || email.isEmpty() || placementDate == null || phone.isEmpty()) {
+        if (name.isEmpty() || dept.isEmpty() || company.isEmpty() || role.isEmpty()  || email.isEmpty() || placementDate == null || phone.isEmpty()) {
             showAlert(Alert.AlertType.ERROR, "Form Error", "Please fill all required fields.");
             return;
         }
+
 
         List<String> studentIds = Model.getInstance().getDatabaseDriver().getStudentsByStatus("Placed");
 

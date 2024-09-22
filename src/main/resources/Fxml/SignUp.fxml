@@ -14,7 +14,7 @@
 
 <AnchorPane prefHeight="750.0" prefWidth="1020.0" styleClass="page" stylesheets="@../Styles/Login.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pms.Controllers.SignUpController">
 
-    <AnchorPane prefHeight="450.0" prefWidth="720.0" styleClass="VBox" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="100.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+    <AnchorPane prefHeight="550.0" prefWidth="820.0" styleClass="VBox" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="100.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
         <VBox fillWidth="false" layoutX="7.0" layoutY="88.0" prefHeight="371.0" prefWidth="368.0">
             <Label styleClass="title1" text="Begin Your Journey" translateY="-17.0" />
             <Label styleClass="title2" text="Username" translateX="40.0" translateY="25.0" />
@@ -35,10 +35,11 @@
             <PasswordField fx:id="passS_fld" layoutX="10.0" layoutY="93.0" prefHeight="26.0" prefWidth="302.0" promptText="Enter Password" styleClass="textfield" translateX="35.0" translateY="-65.0" />
         </VBox>
         <Label layoutX="23.0" layoutY="31.0" styleClass="title" text="Placement Management System" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="30.0" />
-      <ImageView fitHeight="550.0" fitWidth="400.0" layoutX="612.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-        <ImageView fitHeight="550.0" fitWidth="433.0" layoutX="389.0" layoutY="-1.0">
+      <ImageView fitHeight="209.0" fitWidth="180.0" layoutX="508.0" layoutY="155.0" scaleX="2.5" scaleY="2.5" AnchorPane.rightAnchor="134.0">
+         <image>
             <Image url="@../Images/login.png" />
-        </ImageView>
+         </image>
+      </ImageView>
     </AnchorPane>
 
 </AnchorPane>

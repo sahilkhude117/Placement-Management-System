@@ -45,3 +45,43 @@
 .button:disabled {
     -fx-opacity: 0.4;
 }
+
+/* Styling for the MenuButton container */
+
+.menu-button {
+    -fx-opacity: 1;
+    -fx-background-color: #F5F1FEFF;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+    -fx-padding: 2;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.menu-button .label {
+    -fx-font-family: "Manrope";
+    -fx-font-size: 12px;
+    -fx-font-weight: 400;
+}
+
+.menu-button:hover {
+    -fx-background-color: #F5F1FEFF;
+    -fx-cursor: hand;
+}
+
+.menu-button:focused {
+    -fx-background-color: #F5F1FEFF;
+    -fx-cursor: hand;
+}
+
+.menu-button:disabled {
+    -fx-background-color: #F5F1FEFF;
+    -fx-opacity: 0.6;
+}
+
+.menu-button .arrow {
+    -fx-background-color: #5113D7FF;
+}
+
+.menu-button:disabled .arrow {
+    -fx-background-color: #BDC1CAFF;
+}

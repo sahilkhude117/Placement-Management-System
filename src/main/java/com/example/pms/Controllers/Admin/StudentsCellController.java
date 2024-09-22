@@ -5,7 +5,11 @@ import com.example.pms.Models.Students;
 import com.example.pms.Views.AdminMenuOptions;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 
+import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -33,6 +37,9 @@ public class StudentsCellController implements Initializable {
             Students_Phone_lbl.setText(students.studentPhoneProperty().getValue());
             Student_Status_lbl.setText(students.studentStatusProperty().getValue());
             Students_SrNo_lbl.setText(students.studentIDProperty().getValue());
+
+            // Set the status label and color based on placement status
+            setStudentStatus(students.studentStatusProperty().getValue());
         }
 
         // Set up button actions
@@ -50,6 +57,27 @@ public class StudentsCellController implements Initializable {
         // Update UI elements with student data
         initialize(null, null);
     }
+
+    private void setStudentStatus(String status) {
+        Student_Status_lbl.setText(status);
+
+        switch (status) {
+            case "Placed":
+                Student_Status_lbl.setTextFill(Color.GREEN);
+                break;
+            case "Unplaced":
+                Student_Status_lbl.setTextFill(Color.RED);
+                break;
+            case "Opt for Higher Study":
+                Student_Status_lbl.setTextFill(Color.GRAY);
+                break;
+            default:
+                Student_Status_lbl.setTextFill(Color.BLACK); // Default color
+                break;
+        }
+    }
+
+
 
 
     private void onView(Students selectedStudent) {

@@ -1,7 +1,6 @@
 package com.example.pms.Models;
 
 import java.sql.*;
-import java.sql.Date;
 import java.util.*;
 
 public class DatabaseDriver {
@@ -18,6 +17,7 @@ public class DatabaseDriver {
 
 
     //logins
+
     public void addAdmin(String username, String email, String password, String date) {
         try {
             String query = "INSERT INTO Admins (Username, Email, Password, Date) VALUES (?, ?, ?, ?)";
@@ -47,6 +47,7 @@ public class DatabaseDriver {
     }
 
     // Method to get admin data by username
+
     public ResultSet getAdminData(String username) {
         ResultSet resultSet = null;
         try {
@@ -100,7 +101,6 @@ public class DatabaseDriver {
             e.printStackTrace();
         }
     }
-
 
     /*
     * Students
@@ -281,18 +281,9 @@ public class DatabaseDriver {
         return nextStudentId;
     }
 
-
-
-
-
-
-
-
-
     /*
     * Placed Student
     * */
-
 
     public void addPlacedStudent(PlacedStudents placedStudent) {
         String query = "INSERT INTO PlacedStudents (Name, Department, Phone, Role, Package, Company, Email, PlacementDate, Address,StudentId) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -432,6 +423,45 @@ public class DatabaseDriver {
         }
 
         return roles;
+    }
+
+    public int getHighestPackage() {
+        int highestPackage = 0;
+
+        // Query to extract numeric part of the package and find the maximum
+        String query = "SELECT MAX(CAST(REPLACE(REPLACE(LOWER(Package), ' lpa', ''), 'lpa', '') AS INTEGER)) AS Package " +
+                "FROM PlacedStudents";
+
+        try (Statement stmt = connection.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            if (rs.next()) {
+                highestPackage = rs.getInt("Package");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return highestPackage;
+    }
+
+    public int getHighestPackageByDept(String department) {
+        int highestPackage = 0;
+        String query = "SELECT MAX(CAST(REPLACE(REPLACE(LOWER(Package), ' lpa', ''), 'lpa', '') AS INTEGER)) AS Package " +
+                "FROM PlacedStudents WHERE Department = ?";
+
+        try (PreparedStatement stmt = this.connection.prepareStatement(query)) {
+            // Set the department parameter in the query
+            stmt.setString(1, department);
+
+            // Execute the query and retrieve the result
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                highestPackage = rs.getInt(1);  // Get the highest package
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();  // Handle SQL exception (you might want to log this in a real system)
+        }
+
+        return highestPackage;  // Return the highest package for the specified department
     }
 
 
@@ -577,12 +607,6 @@ public class DatabaseDriver {
         return nextCompanyId;
     }
 
-
-
-
-
-
-
     /*
     * Pie Chart
     * */
@@ -692,7 +716,7 @@ public class DatabaseDriver {
 //        }
 //
 //        return unplacedCountByYear;
-//    }
+//     }
 
 
     public Map<String, Integer> getCompaniesCountByYear() {
@@ -716,8 +740,113 @@ public class DatabaseDriver {
         return companiesCountByYear;
     }
 
+    public int getCompanyCount() {
+        int count = 0;
+        String query = "SELECT COUNT(DISTINCT Name) FROM Company"; // Adjust the query based on your table structure
+        try (Statement stmt = connection.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            if (rs.next()) {
+                count = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
 
+    /*
+    * Sorting Department Wise
+    * */
 
+    public int getPlacedCountByDept(String department) {
+        int placedCount = 0;
+        String query = "SELECT COUNT(*) FROM PlacedStudents WHERE Department = ?";
+
+        try (PreparedStatement stmt = this.connection.prepareStatement(query)) {
+
+            // Set the department parameter in the query
+            stmt.setString(1, department);
+
+            // Execute the query and retrieve the result
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                placedCount = rs.getInt(1);  // Get the count from the result
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();  // Handle SQL exception (you might want to log this in a real system)
+        }
+
+        return placedCount;  // Return the count of placed students for the specified department
+    }
+
+    public int getUnplacedCountByDept(String department) {
+        int unplacedCount = 0;
+        String query = "SELECT COUNT(*) FROM Students WHERE Department = ? AND Status = 'Unplaced'";
+
+        try (PreparedStatement stmt = this.connection.prepareStatement(query)) {
+
+            // Set the department parameter in the query
+            stmt.setString(1, department);
+
+            // Execute the query and retrieve the result
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                unplacedCount = rs.getInt(1);  // Get the count from the result
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();  // Handle SQL exception (you might want to log this in a real system)
+        }
+
+        return unplacedCount;  // Return the count of unplaced students for the specified department
+    }
+
+    public int getHigherStudyCountByDept(String department) {
+        int higherStudyCount = 0;
+        String query = "SELECT COUNT(*) FROM Students WHERE Department = ? AND Status = 'Opt to Higher Study'";
+
+        try (PreparedStatement stmt = this.connection.prepareStatement(query)) {
+
+            // Set the department parameter in the query
+            stmt.setString(1, department);
+
+            // Execute the query and retrieve the result
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                higherStudyCount = rs.getInt(1);  // Get the count from the result
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();  // Handle SQL exception (you might want to
+
+        }
+        return higherStudyCount;
+    }
+
+    public Map<String, Integer> getPlacedCountByYearForDept(String department) {
+        Map<String, Integer> placedCountByYear = new TreeMap<>();  // TreeMap ensures sorting by key
+        String query = "SELECT strftime('%Y', datetime(PlacementDate / 1000, 'unixepoch')) AS Year, COUNT(*) AS Count " +
+                "FROM PlacedStudents WHERE PlacementDate IS NOT NULL AND Department = ? " +
+                "GROUP BY strftime('%Y', datetime(PlacementDate / 1000, 'unixepoch'))";
+
+        try (PreparedStatement stmt = this.connection.prepareStatement(query)) {
+
+            // Set the department parameter in the query
+            stmt.setString(1, department);
+
+            // Execute the query
+            ResultSet rs = stmt.executeQuery();
+
+            // Loop through the result set and store the year and count in the map
+            while (rs.next()) {
+                String year = rs.getString("Year");
+                int count = rs.getInt("Count");
+                placedCountByYear.put(year, count);  // automatically sorted by year
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return placedCountByYear;
+    }
 
 
 
