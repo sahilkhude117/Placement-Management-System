@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="750.0" prefWidth="850.0" stylesheets="@../../Styles/StudentServices.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pms.Controllers.Admin.ReportsController">
+    <VBox layoutX="28.0" layoutY="-41.0" prefHeight="69.0" prefWidth="864.0" styleClass="title_container" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="0.0">
+        <Label styleClass="title" text="Report/Suggestions" translateY="5.0" />
+    </VBox>
+    <AnchorPane layoutX="310.0" layoutY="282.0" prefHeight="200.0" prefWidth="200.0" styleClass="title_container" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="120.0">
+        <padding>
+            <Insets left="25.0" />
+        </padding>
+        <Label layoutX="36.0" layoutY="79.0" text="Category :" />
+        <RadioButton fx:id="bug_rbtn" layoutX="111.0" layoutY="79.0" mnemonicParsing="false" text="Bug / Issue">
+           <font>
+               <Font name="System Bold" size="12.0" />
+           </font>
+        </RadioButton>
+        <Label layoutX="36.0" layoutY="202.0" text="Subject :" />
+        <TextField fx:id="sub_fld" layoutX="111.0" layoutY="198.0" prefHeight="26.0" prefWidth="600.0" promptText="Subject" styleClass="textfield" />
+        <Label layoutX="36.0" layoutY="274.0" text="Description :" />
+        <TextArea fx:id="desc_fld" layoutX="111.0" layoutY="274.0" prefHeight="190.0" prefWidth="600.0" promptText="Description " styleClass="textfield" />
+        <Button fx:id="submit_btn" layoutX="385.0" layoutY="509.0" mnemonicParsing="false" text="Submit">
+           <graphic>
+               <FontAwesomeIconView glyphName="SAVE" size="15" />
+           </graphic>
+        </Button>
+        <RadioButton fx:id="suggestion_rbtn" layoutX="110.0" layoutY="107.0" mnemonicParsing="false" text="Suggestion">
+           <font>
+               <Font name="System Bold" size="12.0" />
+           </font>
+        </RadioButton>
+        <RadioButton fx:id="others_rbtn" layoutX="111.0" layoutY="136.0" mnemonicParsing="false" text="Others">
+           <font>
+               <Font name="System Bold" size="12.0" />
+           </font>
+        </RadioButton>
+        <Text layoutX="36.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="“Your feedback helps us improve. Please share any issues you’ve encountered or suggest improvements.”" />
+    </AnchorPane>
+    <Button fx:id="editStudentsBack_btn" layoutX="25.0" layoutY="83.0" mnemonicParsing="false" text="Back" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="80.0">
+        <graphic>
+            <FontAwesomeIconView glyphName="ARROW_LEFT" size="15" />
+        </graphic>
+    </Button>
+</AnchorPane>

@@ -31,6 +31,8 @@ public class PlacedStudentsCellFactory extends ListCell<PlacedStudents> {
                 AnchorPane placedStudentCell = loader.load();
                 setGraphic(placedStudentCell);
 
+                this.setStyle("-fx-background-color: transparent;");
+
             } catch (IOException e) {
                 e.printStackTrace();
                 // Handle any loading errors gracefully by resetting the cell

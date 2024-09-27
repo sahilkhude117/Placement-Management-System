@@ -15,7 +15,7 @@
         <Label styleClass="title" text="Students" translateY="5.0" />
     </VBox>
 
-    <AnchorPane prefHeight="60.0" prefWidth="740.0" styleClass="cell_container" stylesheets="@../../Styles/StudentsCell.css" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="120.0">
+    <AnchorPane prefHeight="60.0" prefWidth="740.0" styleClass="cell_containerTitle" stylesheets="@../../Styles/StudentsCell.css" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="120.0">
         <VBox alignment="CENTER" prefHeight="50.0" prefWidth="25.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
             <Label text="Id" />
         </VBox>

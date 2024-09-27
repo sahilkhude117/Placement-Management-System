@@ -3,8 +3,11 @@ package com.example.pms.Controllers.Admin;
 import com.example.pms.Models.Model;
 import com.example.pms.Models.PlacedStudents;
 import com.example.pms.Views.AdminMenuOptions;
+import javafx.animation.ScaleTransition;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,6 +25,7 @@ public class PlacedStudentsCellController implements Initializable {
     public Button PlacedStudents_Edit_btn;
     public Button PlacedStudents_Delete_btn;
     public Label PlacedStudents_Company_lbl;
+    public AnchorPane PS_ap;
 
     private PlacedStudents placedStudents;
 
@@ -39,10 +43,16 @@ public class PlacedStudentsCellController implements Initializable {
             PlacedStudents_SrNo_lbl.setText(placedStudents.placedStudentIdProperty().getValue());
         }
 
+        createHoverEffect(PlacedStudents_View_btn);
+        createHoverEffect(PlacedStudents_Edit_btn);
+        createHoverEffect(PlacedStudents_Delete_btn);
+        createHoverEffect(PS_ap);
+
         // Set up button actions
         PlacedStudents_View_btn.setOnAction(event -> onView(placedStudents));
         PlacedStudents_Edit_btn.setOnAction(event -> onEdit());
         PlacedStudents_Delete_btn.setOnAction(event -> onDelete());
+        PS_ap.setOnMouseClicked(event -> onView(placedStudents));
 
     }
 
@@ -118,6 +128,52 @@ public class PlacedStudentsCellController implements Initializable {
         }
     }
 
+
+    public void createHoverEffect(Button btn) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), btn);
+        scaleIn.setToX(1.1);  // Scale to 110% on hover
+        scaleIn.setToY(1.1);  // Scale to 110% on hover
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), btn);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        btn.setOnMouseEntered(e -> scaleIn.playFromStart());
+        btn.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
+
+    public void createHoverEffect(MenuButton mb) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), mb);
+        scaleIn.setToX(1.1);  // Scale to 110% on hover
+        scaleIn.setToY(1.1);  // Scale to 110% on hover
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), mb);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        mb.setOnMouseEntered(e -> scaleIn.playFromStart());
+        mb.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
+
+
+    public void createHoverEffect(AnchorPane ap) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), ap);
+        scaleIn.setToX(1.025);  // Scale to 110% on hover
+        scaleIn.setToY(1.025);  // Scale to 110% on hover
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), ap);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        ap.setOnMouseEntered(e -> scaleIn.playFromStart());
+        ap.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
     private void showAlert(Alert.AlertType alertType, String title, String content) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);

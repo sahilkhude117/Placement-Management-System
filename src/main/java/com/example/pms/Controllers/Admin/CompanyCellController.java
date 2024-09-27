@@ -3,9 +3,13 @@ package com.example.pms.Controllers.Admin;
 import com.example.pms.Models.Company;
 import com.example.pms.Models.Model;
 import com.example.pms.Views.AdminMenuOptions;
+import javafx.animation.ScaleTransition;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 
+import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -20,6 +24,7 @@ public class CompanyCellController implements Initializable {
     public Button Company_Edit_btn;
     public Button Company_Delete_btn;
     public Label Company_email_lbl;
+    public AnchorPane CompanyCell_ap;
 
     private Company company;
 
@@ -37,9 +42,15 @@ public class CompanyCellController implements Initializable {
             Company_email_lbl.setText(company.companyEmailProperty().getValue());
         }
 
+        createHoverEffect(Company_Delete_btn);
+        createHoverEffect(Company_Edit_btn);
+        createHoverEffect(Company_View_btn);
+        createHoverEffect(CompanyCell_ap);
+
         Company_View_btn.setOnAction(e -> onView(company));
         Company_Edit_btn.setOnAction(e -> onEdit());
         Company_Delete_btn.setOnAction(e -> onDelete());
+        CompanyCell_ap.setOnMouseClicked(e -> onView(company));
     }
 
     public void setCompany(Company company) {
@@ -95,7 +106,7 @@ public class CompanyCellController implements Initializable {
                 }
 
                 // Show success alert
-                showAlert(Alert.AlertType.INFORMATION, "Success", "Student deleted successfully.");
+                showAlert(Alert.AlertType.INFORMATION, "Success", "Company deleted successfully.");
             }
         });
 
@@ -103,6 +114,53 @@ public class CompanyCellController implements Initializable {
             CompanyController.instance.refresh(); // Refresh the StudentsController
         }
     }
+
+
+    public void createHoverEffect(Button btn) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), btn);
+        scaleIn.setToX(1.1);  // Scale to 110% on hover
+        scaleIn.setToY(1.1);  // Scale to 110% on hover
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), btn);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        btn.setOnMouseEntered(e -> scaleIn.playFromStart());
+        btn.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
+
+    public void createHoverEffect(MenuButton mb) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), mb);
+        scaleIn.setToX(1.1);  // Scale to 110% on hover
+        scaleIn.setToY(1.1);  // Scale to 110% on hover
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), mb);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        mb.setOnMouseEntered(e -> scaleIn.playFromStart());
+        mb.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
+
+    public void createHoverEffect(AnchorPane ap) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), ap);
+        scaleIn.setToX(1.025);
+        scaleIn.setToY(1.025);
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), ap);
+        scaleOut.setToX(1);
+        scaleOut.setToY(1);
+
+        // Set hover event listeners
+        ap.setOnMouseEntered(e -> scaleIn.playFromStart());
+        ap.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
+
 
     private void showAlert(Alert.AlertType alertType, String title, String content) {
         Alert alert = new Alert(alertType);

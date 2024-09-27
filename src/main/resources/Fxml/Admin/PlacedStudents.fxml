@@ -15,21 +15,21 @@
         <Label styleClass="title" text="Placed Students" translateY="5.0" />
     </VBox>
 
-    <AnchorPane prefHeight="60.0" prefWidth="800.0" styleClass="cell_container" stylesheets="@../../Styles/PlacedStudentCell.css" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="120.0">
+    <AnchorPane prefHeight="60.0" prefWidth="800.0" styleClass="cell_containerTitle" stylesheets="@../../Styles/PlacedStudentCell.css" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="120.0">
         <VBox alignment="CENTER" prefHeight="50.0" prefWidth="25.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="1.0" AnchorPane.topAnchor="5.0">
-            <Label text="Id" />
+            <Label styleClass="id" text="Id" />
         </VBox>
         <VBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="5.0" prefHeight="50.0" prefWidth="103.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="5.0">
             <Label styleClass="name" text="Name" />
         </VBox>
         <VBox alignment="CENTER_LEFT" layoutX="142.4" layoutY="5.0" prefHeight="50.0" prefWidth="33.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="142.0" AnchorPane.topAnchor="5.0">
-            <Label prefHeight="20.0" prefWidth="37.0" styleClass="dept" text="Dept" />
+            <Label prefHeight="20.0" prefWidth="37.0" styleClass="id" text="Dept" translateY="1.0" />
         </VBox>
         <VBox alignment="CENTER_LEFT" layoutX="176.0" layoutY="5.0" prefHeight="50.0" prefWidth="57.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="176.0" AnchorPane.topAnchor="5.0">
             <Label prefHeight="20.0" prefWidth="70.0" styleClass="lpa" text="Package" />
         </VBox>
         <VBox alignment="CENTER" layoutX="240.0" layoutY="5.0" prefHeight="50.0" prefWidth="66.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="5.0">
-            <Label styleClass="phone" text="Phone" />
+            <Label styleClass="id" text="Phone" />
         </VBox>
         <VBox alignment="CENTER" layoutX="394.4" layoutY="5.0" prefHeight="50.0" prefWidth="135.0" AnchorPane.leftAnchor="394.0">
             <Label prefHeight="20.0" prefWidth="122.0" styleClass="status" text="Role" />

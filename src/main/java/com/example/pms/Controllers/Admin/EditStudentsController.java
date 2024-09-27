@@ -1,11 +1,15 @@
 package com.example.pms.Controllers.Admin;
 
 import com.example.pms.Models.Model;
+import com.example.pms.Models.PlacedStudents;
 import com.example.pms.Models.Students;
 import com.example.pms.Views.AdminMenuOptions;
+import javafx.animation.ScaleTransition;
 import javafx.collections.FXCollections;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.util.Duration;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -25,11 +29,14 @@ public class EditStudentsController implements Initializable {
     public Label editStudentsId_fld1;
 
     private Students student;
+    private PlacedStudents placedStudents;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Populate ChoiceBox fields
         populateStatusComboBox();
+        createHoverEffect(editStudentsAdd_btn);
+        createHoverEffect(editStudentsBack_btn);
 
         // Add Button event listener
         editStudentsAdd_btn.setOnAction(e -> onSave());
@@ -112,13 +119,57 @@ public class EditStudentsController implements Initializable {
         if (status.equals("Placed")) {
             if ( Model.getInstance().getDatabaseDriver().placedStudentExists(id)){
                 saveStudent(student);
-            } else{
+            } else {
                 showPlacedStudentAlert(student);
             }
-        } else {
-            saveStudent(student);
+        } else  {
+            showDeleteAlert(student);
         }
     }
+
+    private void showDeleteAlert(Students student) {
+        String studentId = student.studentIDProperty().getValue();
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Warning");
+        alert.setHeaderText("Student will be marked as unplaced");
+        alert.setContentText("Do you want to delete this student from the placed students list?");
+
+        alert.showAndWait().ifPresent(response -> {
+            if (response == ButtonType.OK) {
+                saveStudent(student); // Save updated student data
+
+                // Call the method to delete the student from the Placed Students database
+                Model.getInstance().getDatabaseDriver().deletePlacedStudent(studentId);
+
+                // Find the PlacedStudentsController and remove the student from the ListView
+                PlacedStudentsController placedStudentsController = (PlacedStudentsController) Model.getInstance()
+                        .getViewFactory()
+                        .getController(AdminMenuOptions.PLACED_STUDENTS);
+
+                if (placedStudentsController != null) {
+                    ListView<PlacedStudents> listView = placedStudentsController.getPlacedStudentsListView();
+                    if (listView != null) {
+                        // Find and remove the correct placed student from the ListView
+                        listView.getItems().removeIf(placedStudent ->
+                                placedStudent.placedStudentIdProperty().getValue().equals(studentId));
+                    }
+                }
+
+                // Show success alert
+                showAlert(Alert.AlertType.INFORMATION, "Success", "Student deleted from placed Students and data saved successfully.");
+            }
+        });
+
+        if (PlacedStudentsController.instance != null) {
+            PlacedStudentsController.instance.refresh(); // Refresh the StudentsController
+        }
+
+        if (DashboardController.instance != null) {
+            DashboardController.instance.refresh();
+        }
+    }
+
 
     private void showPlacedStudentAlert(Students student) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -172,6 +223,37 @@ public class EditStudentsController implements Initializable {
     private void onBack(){
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.STUDENTS);
     }
+
+    public void createHoverEffect(Button btn) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), btn);
+        scaleIn.setToX(1.1);  // Scale to 110% on hover
+        scaleIn.setToY(1.1);  // Scale to 110% on hover
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), btn);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        btn.setOnMouseEntered(e -> scaleIn.playFromStart());
+        btn.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
+
+    public void createHoverEffect(MenuButton mb) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), mb);
+        scaleIn.setToX(1.1);  // Scale to 110% on hover
+        scaleIn.setToY(1.1);  // Scale to 110% on hover
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), mb);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        mb.setOnMouseEntered(e -> scaleIn.playFromStart());
+        mb.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
+
 
     private void showAlert(Alert.AlertType alertType, String title, String content) {
         Alert alert = new Alert(alertType);

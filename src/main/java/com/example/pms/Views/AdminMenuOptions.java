@@ -23,5 +23,7 @@ public enum AdminMenuOptions {
     VIEW_COMPANIES,
 
 
-    PROFILE
+    PROFILE,
+
+    REPORTS
 }

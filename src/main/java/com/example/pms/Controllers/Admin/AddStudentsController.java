@@ -3,10 +3,12 @@ package com.example.pms.Controllers.Admin;
 import com.example.pms.Models.Model;
 import com.example.pms.Models.Students;
 import com.example.pms.Views.AdminMenuOptions;
+import javafx.animation.ScaleTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -34,6 +36,9 @@ public class AddStudentsController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         addStudentsAdd_btn.setOnAction(e -> onSave());
         addStudentsBack_btn.setOnAction(e -> onBack());
+
+        createHoverEffect(addStudentsAdd_btn);
+        createHoverEffect(addStudentsBack_btn);
 
         populateStatusChoiceBox();
 
@@ -199,6 +204,37 @@ public class AddStudentsController implements Initializable {
     private void onBack() {
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.STUDENTS);
     }
+
+    public void createHoverEffect(Button btn) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), btn);
+        scaleIn.setToX(1.1);  // Scale to 110% on hover
+        scaleIn.setToY(1.1);  // Scale to 110% on hover
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), btn);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        btn.setOnMouseEntered(e -> scaleIn.playFromStart());
+        btn.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
+
+    public void createHoverEffect(MenuButton mb) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), mb);
+        scaleIn.setToX(1.1);  // Scale to 110% on hover
+        scaleIn.setToY(1.1);  // Scale to 110% on hover
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), mb);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        mb.setOnMouseEntered(e -> scaleIn.playFromStart());
+        mb.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
+
 
     private void showAlert(Alert.AlertType alertType, String title, String content) {
         Alert alert = new Alert(alertType);

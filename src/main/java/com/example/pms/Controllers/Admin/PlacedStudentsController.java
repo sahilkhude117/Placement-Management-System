@@ -5,6 +5,7 @@ import com.example.pms.Models.PlacedStudents;
 import com.example.pms.Models.Students;
 import com.example.pms.Views.AdminMenuOptions;
 import com.example.pms.Views.PlacedStudentsCellFactory;
+import javafx.animation.ScaleTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -13,6 +14,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import javafx.stage.FileChooser;
+import javafx.util.Duration;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
@@ -44,6 +47,9 @@ public class PlacedStudentsController implements Initializable {
 
         addPlacedStudents_btn.setOnAction(event -> onAddPlacedStudent());
 
+        createHoverEffect(addPlacedStudents_btn);
+        createHoverEffect(sortPS_mb);
+
         refresh();
         populateDepartmentMenuButton();
 
@@ -73,18 +79,18 @@ public class PlacedStudentsController implements Initializable {
         // Create MenuItems for sorting options
         MenuItem sortById = new MenuItem("Sort by ID");
         MenuItem sortByName = new MenuItem("Sort by Name");
-        MenuItem sortByGpa = new MenuItem("Sort by Package");
-        MenuItem sortByStatus = new MenuItem("Sort by Role");
+        MenuItem sortByPackage = new MenuItem("Sort by Package");
+        MenuItem sortByRole = new MenuItem("Sort by Role");
         MenuItem def = new MenuItem("Default");
 
         // Add sorting options to the MenuButton
-        sortPS_mb.getItems().addAll(sortById, sortByName, sortByGpa, sortByStatus,def);
+        sortPS_mb.getItems().addAll(sortById, sortByName, sortByPackage, sortByRole,def);
 
         // Set actions for each sorting option
         sortById.setOnAction(event -> sortStudents("ID"));
         sortByName.setOnAction(event -> sortStudents("Name"));
-        sortByGpa.setOnAction(event -> sortStudents("GPA"));
-        sortByStatus.setOnAction(event -> sortStudents("Status"));
+        sortByPackage.setOnAction(event -> sortStudents("Package"));
+        sortByRole.setOnAction(event -> sortStudents("Role"));
         def.setOnAction(event -> handleDepartmentSelection("Default"));
     }
 
@@ -174,6 +180,37 @@ public class PlacedStudentsController implements Initializable {
     private void onAddPlacedStudent() {
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.ADD_PLACED_STUDENTS);
     }
+
+    public void createHoverEffect(Button btn) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), btn);
+        scaleIn.setToX(1.1);  // Scale to 110% on hover
+        scaleIn.setToY(1.1);  // Scale to 110% on hover
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), btn);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        btn.setOnMouseEntered(e -> scaleIn.playFromStart());
+        btn.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
+
+    public void createHoverEffect(MenuButton mb) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), mb);
+        scaleIn.setToX(1.1);  // Scale to 110% on hover
+        scaleIn.setToY(1.1);  // Scale to 110% on hover
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), mb);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        mb.setOnMouseEntered(e -> scaleIn.playFromStart());
+        mb.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
+
 
     public ObservableList<PlacedStudents> getPlacedStudentsObservableList() {
         return placedStudentsObservableList;

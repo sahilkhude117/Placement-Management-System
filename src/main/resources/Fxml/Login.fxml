@@ -8,25 +8,38 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="750.0" prefWidth="1020.0" styleClass="page" stylesheets="@../Styles/Login.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pms.Controllers.LoginController">
 
-    <AnchorPane layoutX="100.0" layoutY="78.0" prefHeight="503.0" prefWidth="820.0" styleClass="VBox" AnchorPane.bottomAnchor="155.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="90.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
-        <VBox fillWidth="false" layoutX="14.0" layoutY="111.0" prefHeight="323.0" prefWidth="368.0">
-            <Label styleClass="title1" text="Welcome Back !" />
-            <Label styleClass="title2" text="Username" translateX="40.0" translateY="40.0" />
+    <AnchorPane layoutX="100.0" layoutY="78.0" prefHeight="503.0" prefWidth="820.0" styleClass="VBox" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="120.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+        <VBox fillWidth="false" layoutX="14.0" layoutY="75.0" prefHeight="323.0" prefWidth="368.0">
+            <Label styleClass="title1" text="Welcome Back !">
+                <font>
+                    <Font size="18.0" />
+                </font></Label>
+            <Label styleClass="title2" text="Username" translateX="40.0" translateY="40.0">
+                <font>
+                    <Font size="14.0" />
+                </font></Label>
             <TextField fx:id="usernameL_fld" prefHeight="26.0" prefWidth="303.0" promptText="Enter Your Username" styleClass="textfield" translateX="35.0" translateY="50.0" />
             <Label styleClass="title2" text="Password" translateY="65.0" />
             <PasswordField fx:id="passL_fld" prefHeight="26.0" prefWidth="302.0" promptText="Enter Your Password" styleClass="textfield" translateX="35.0" translateY="75.0" />
-            <Button fx:id="login_btn" mnemonicParsing="false" prefHeight="35.0" prefWidth="303.0" text="Log In" translateX="35.0" translateY="100.0" />
-            <Label fx:id="signupL_lbl" styleClass="signup" text="Sign Up Here" translateX="170.0" translateY="120.0" />
-            <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="New User? " textAlignment="JUSTIFY" translateX="112.0" translateY="103.0" />
+            <Button fx:id="login_btn" mnemonicParsing="false" prefHeight="35.0" prefWidth="303.0" text="Log In" translateX="35.0" translateY="112.0">
+                <font>
+                    <Font size="18.0" />
+                </font></Button>
+            <Label fx:id="signupL_lbl" styleClass="signup" text="Sign Up Here" translateX="171.0" translateY="127.0" />
+            <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="New User? " textAlignment="JUSTIFY" translateX="109.0" translateY="110.0" />
         </VBox>
-      <Label layoutX="48.0" layoutY="44.0" styleClass="title" text="Placement Management System" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="30.0" />
-      <ImageView fitHeight="202.0" fitWidth="178.0" layoutX="516.0" layoutY="151.0" scaleX="2.5" scaleY="2.5">
+        <Label layoutX="48.0" layoutY="44.0" styleClass="title" text="Placement Management System" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="30.0">
+            <font>
+                <Font size="20.0" />
+            </font></Label>
+      <ImageView fitHeight="400.0" fitWidth="400.0" layoutX="456.0" layoutY="67.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
          <image>
-            <Image url="@../Images/login.png" />
+            <Image url="@../Images/Login.png" />
          </image>
       </ImageView>
     </AnchorPane>

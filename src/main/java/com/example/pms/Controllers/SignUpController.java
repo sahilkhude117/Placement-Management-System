@@ -3,9 +3,11 @@ package com.example.pms.Controllers;
 import com.example.pms.Controllers.Admin.ProfileController;
 import com.example.pms.Models.Admin;
 import com.example.pms.Models.Model;
+import javafx.animation.ScaleTransition;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -26,6 +28,12 @@ public class SignUpController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         signup_btn.setOnAction(event -> onSignUp());
         loginL_lbl.setOnMouseClicked(event -> showLoginWindow());
+
+//        createHoverEffect(usernameS_fld);
+//        createHoverEffect(emailS_fld);
+//        createHoverEffect(passS_fld);
+//        createHoverEffect(confirmPassS_fld);
+        createHoverEffect(signup_btn);
     }
 
     private void onSignUp() {
@@ -89,7 +97,35 @@ public class SignUpController implements Initializable {
         // Close the signup window
         Model.getInstance().getViewFactory().closeStage(stage);
     }
-    
+    public void createHoverEffect(Button btn) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), btn);
+        scaleIn.setToX(1.1);  // Scale to 110% on hover
+        scaleIn.setToY(1.1);  // Scale to 110% on hover
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), btn);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        btn.setOnMouseEntered(e -> scaleIn.playFromStart());
+        btn.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
+
+    public void createHoverEffect(TextField tf) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), tf);
+        scaleIn.setToX(1.1);  // Scale to 110% on hover
+        scaleIn.setToY(1.1);  // Scale to 110% on hover
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), tf);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        tf.setOnMouseEntered(e -> scaleIn.playFromStart());
+        tf.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
 
     private void showLoginWindow() {
         Stage stage = (Stage) loginL_lbl.getScene().getWindow();

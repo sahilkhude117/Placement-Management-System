@@ -10,7 +10,12 @@
     -fx-border-radius: 8px;
     -fx-background-radius: 8px;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+}
 
+.box{
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
 }
 
 .image {
@@ -22,6 +27,12 @@
     -fx-text-fill: #6D31EDFF;
 
 }
+.showPass{
+    -fx-font-family: Arial;
+}
+.showPass:hover {
+    -fx-cursor: hand;
+}
 
 .signup:hover {
     -fx-cursor: hand;
@@ -30,21 +41,21 @@
 .title2 {
     -fx-translate-x: 35px;
     -fx-font-family: "Lexend";
-    -fx-font-size: 12px;
+    -fx-font-size: 14px;
     -fx-font-weight: 800;
     -fx-text-fill: #171A1FFF;
 }
 
 .terms {
     -fx-font-family: "Lexend";
-    -fx-font-size: 9px;
+    -fx-font-size: 10px;
     -fx-font-weight: 400;
     -fx-text-fill: #6D31EDFF;
 }
 
 .title {
     -fx-font-family: "Lexend";
-    -fx-font-size: 16px;
+
     -fx-font-weight: bold;
     -fx-text-fill: #6D31EDFF;
 }
@@ -53,17 +64,18 @@
     -fx-translate-y: 18px;
     -fx-translate-x: 35px;
     -fx-font-family: "Lexend";
-    -fx-font-size: 15px;
     -fx-font-weight: bold;
     -fx-text-fill: #171A1FFF;
 }
+
+
 
 
 .button {
     -fx-pref-height: 30px;
     -fx-padding: 0 10px;
     -fx-font-family: "Manrope";
-    -fx-font-size: 12px;
+    -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-text-fill: #FFFFFF;
     -fx-background-color: #6D31EDFF;
@@ -90,11 +102,12 @@
     -fx-background-radius: 4px;
     -fx-border-color: transparent;
     -fx-font-family: "Manrope";
-    -fx-font-size: 9px;
+    -fx-font-size: 12px;
     -fx-font-weight: 400;
     -fx-text-fill: #6B6B6B; /* Slightly less dark text */
     -fx-padding: 5px;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+    -fx-pref-height: 30px;
 }
 
 

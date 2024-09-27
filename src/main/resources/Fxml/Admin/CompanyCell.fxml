@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="60.0" prefWidth="800.0" styleClass="cell_container" stylesheets="@../../Styles/CompnayCell.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
-    <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="25.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="5.0">
-        <Label fx:id="Company_SrNo_lbl" text="1">
+<AnchorPane fx:id="CompanyCell_ap" prefHeight="60.0" prefWidth="800.0" styleClass="cell_container" stylesheets="@../../Styles/CompnayCell.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+    <VBox alignment="CENTER" prefHeight="50.0" prefWidth="25.0" styleClass="Label" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="5.0">
+        <Label fx:id="Company_SrNo_lbl" styleClass="id" text="1">
          <font>
             <Font size="10.0" />
          </font></Label>
@@ -42,6 +42,6 @@
         </graphic>
     </Button>
     <VBox alignment="CENTER_LEFT" layoutX="317.0" layoutY="5.0" prefHeight="50.0" prefWidth="122.0">
-        <Label fx:id="Company_email_lbl" text="sam@gmail.com" />
+        <Label fx:id="Company_email_lbl" styleClass="Label" text="sam@gmail.com" />
     </VBox>
 </AnchorPane>

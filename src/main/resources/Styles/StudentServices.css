@@ -25,8 +25,11 @@
     -fx-font-weight: bold;
 }
 .view {
-    -fx-font-weight: bold;
     -fx-font-size: 15px;
+}
+
+.Label {
+    -fx-font-weight: bold;
 }
 
 .button {

@@ -2,7 +2,21 @@
     -fx-background-color: #F5F1FEFF;
     -fx-background-radius: 10px;
     -fx-border-radius: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+}
 
+.cell_container:hover {
+    -fx-cursor: hand;
+}
+
+.Label {
+    -fx-text-fill: black;
+}
+
+.cell_containerTitle{
+    -fx-background-color: #F0F9FFFF;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
 }
 
@@ -21,6 +35,15 @@
         -fx-font-weight: normal;
         -fx-text-fill: #171A1FFF;
         -fx-line-spacing: 8px;
+        -fx-wrap-text: true;
+}
+
+.id {
+    -fx-font-family: "Manrope";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #171A1FFF;
+    -fx-line-spacing: 8px;
     -fx-wrap-text: true;
 }
 

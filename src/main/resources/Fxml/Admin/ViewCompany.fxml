@@ -15,14 +15,14 @@
         <padding>
             <Insets left="25.0" />
         </padding>
-        <Label layoutX="21.0" layoutY="26.0" text="Company Name :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
-        <Label layoutX="20.0" layoutY="57.0" text="Company Id :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="65.0" />
-        <Label layoutX="19.0" layoutY="92.0" text="Co-Ordinator Name :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="105.0" />
-        <Label layoutX="14.0" layoutY="170.0" text="Co-Ordinator Phone :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="150.0" />
-        <Label layoutX="22.0" layoutY="248.0" text="Email :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="190.0" />
-        <Label layoutX="24.0" layoutY="342.0" text="Drive Date :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="245.0" />
-        <Label layoutX="28.0" layoutY="499.0" text="Address (optional) :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="340.0" />
-        <Label layoutX="39.0" layoutY="397.0" text="Highest Package :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="300.0" />
+        <Label layoutX="21.0" layoutY="26.0" styleClass="Label" text="Company Name :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+        <Label layoutX="20.0" layoutY="57.0" styleClass="Label" text="Company Id :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="65.0" />
+        <Label layoutX="19.0" layoutY="92.0" styleClass="Label" text="Co-Ordinator Name :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="105.0" />
+        <Label layoutX="14.0" layoutY="170.0" styleClass="Label" text="Co-Ordinator Phone :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="150.0" />
+        <Label layoutX="22.0" layoutY="248.0" styleClass="Label" text="Email :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="190.0" />
+        <Label layoutX="24.0" layoutY="342.0" styleClass="Label" text="Drive Date :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="245.0" />
+        <Label layoutX="28.0" layoutY="499.0" styleClass="Label" text="Address (optional) :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="340.0" />
+        <Label layoutX="39.0" layoutY="397.0" styleClass="Label" text="Highest Package :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="300.0" />
       <Label fx:id="viewCompanyName2_lbl" layoutX="146.0" layoutY="36.0" styleClass="view" text="AWS" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="17.0" />
       <Label fx:id="viewCompanyId_lbl" layoutX="145.0" layoutY="80.0" styleClass="view" text="C01" AnchorPane.topAnchor="63.0" />
       <Label fx:id="viewCompanyCoordinator_lbl" layoutX="145.0" layoutY="120.0" styleClass="view" text="RK" AnchorPane.topAnchor="101.0" />

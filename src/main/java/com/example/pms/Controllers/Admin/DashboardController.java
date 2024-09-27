@@ -3,12 +3,15 @@ package com.example.pms.Controllers.Admin;
 import com.example.pms.Models.Model;
 import com.example.pms.Models.PlacedStudents;
 import com.example.pms.Views.PlacedStudentsCellFactory;
+import javafx.animation.ScaleTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.List;
@@ -30,12 +33,25 @@ public class DashboardController implements Initializable {
     public static DashboardController instance;
     public ObservableList<PlacedStudents> placedStudentsObservableList;
     public MenuButton sortByDeptDash_mb;
+    public AnchorPane HighP;
+    public AnchorPane Ps;
+    public AnchorPane Company;
+    public AnchorPane Ups;
 
     private FilteredList<PlacedStudents> filteredPSList;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        createHoverEffect(Ps);
+        createHoverEffect(Company);
+        createHoverEffect(Ups);
+        createHoverEffect(HighP);
+        // createHoverEffect(dashboard_pie);
+        createHoverEffect(reload_btn);
+        createHoverEffect(sortByDeptDash_mb);
+
 
         // label
         updateLabels();
@@ -44,11 +60,7 @@ public class DashboardController implements Initializable {
 
         loadPieChartData();
         populateDepartmentMenuButton();
-        reload_btn.setOnAction(event -> {
-                    sortByDeptDash_mb.setText("Sort By Department");
-                    loadPieChartData();
-                    updateLabels();
-                });
+        reload_btn.setOnAction(event ->onReload());
 
         /*
         * List view
@@ -73,7 +85,7 @@ public class DashboardController implements Initializable {
         MenuItem def = new MenuItem("Default");
 
         // Add MenuItems to the MenuButton
-        sortByDeptDash_mb.getItems().addAll(it, mech, comps, extc);
+        sortByDeptDash_mb.getItems().addAll(it, mech, comps, extc,def);
 
         // Optionally: Set an action for when an item is selected
         it.setOnAction(event -> handleDepartmentSelection("IT"));
@@ -253,6 +265,84 @@ public class DashboardController implements Initializable {
         // Update percentage growth for placed students based on department-specific data
         updatePercentageLabel(dashPSPercent_lbl, placedCountThisYear, placedCountLastYear);
     }
+
+   private void onReload() {
+        sortByDeptDash_mb.setText("Sort By Department");
+        loadPieChartData();
+        updateLabels();
+
+        // Reset the filter predicate
+        filteredPSList.setPredicate(placedStudents -> true);
+
+        // Ensure the ListView is updated with the reset filtered list
+        dashboardListView.setItems(filteredPSList);
+    }
+
+    private void createHoverEffect(AnchorPane ap) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), ap);
+        scaleIn.setToX(1.1);  // Scale to 110% on hover
+        scaleIn.setToY(1.1);  // Scale to 110% on hover
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), ap);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        ap.setOnMouseEntered(e -> scaleIn.playFromStart());
+        ap.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
+
+    private void createHoverEffect(Button btn) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), btn);
+        scaleIn.setToX(1.1);  // Scale to 110% on hover
+        scaleIn.setToY(1.1);  // Scale to 110% on hover
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), btn);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        btn.setOnMouseEntered(e -> scaleIn.playFromStart());
+        btn.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
+
+    private void createHoverEffect(MenuButton mb) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), mb);
+        scaleIn.setToX(1.1);  // Scale to 110% on hover
+        scaleIn.setToY(1.1);  // Scale to 110% on hover
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), mb);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        mb.setOnMouseEntered(e -> scaleIn.playFromStart());
+        mb.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
+
+    private void createHoverEffect(PieChart pieChart) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), pieChart);
+        scaleIn.setToX(1.1);  // Scale to 110% on hover
+        scaleIn.setToY(1.1);  // Scale to 110% on hover
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), pieChart);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        pieChart.setOnMouseEntered(e -> scaleIn.playFromStart());
+        pieChart.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
+
+
+
+
+
+
 
 
 

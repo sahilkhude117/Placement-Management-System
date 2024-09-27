@@ -31,6 +31,10 @@ public class CompanyCellFactory extends ListCell<Company> {
                 AnchorPane companyCell = loader.load();
                 setGraphic(companyCell);
 
+
+
+                this.setStyle("-fx-background-color: transparent;");
+
             } catch (IOException e) {
                 e.printStackTrace();
                 // Handle any loading errors gracefully by resetting the cell

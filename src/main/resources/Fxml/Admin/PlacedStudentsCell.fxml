@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="60.0" prefWidth="800.0" styleClass="cell_container" stylesheets="@../../Styles/PlacedStudentCell.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
-    <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="25.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="5.0">
-        <Label fx:id="PlacedStudents_SrNo_lbl" text="1">
+<AnchorPane fx:id="PS_ap" prefHeight="60.0" prefWidth="800.0" styleClass="cell_container" stylesheets="@../../Styles/PlacedStudentCell.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+    <VBox alignment="CENTER" prefHeight="50.0" prefWidth="25.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="5.0">
+        <Label fx:id="PlacedStudents_SrNo_lbl" styleClass="id" text="1">
          <font>
             <Font size="10.0" />
          </font></Label>
@@ -48,7 +48,7 @@
         </graphic>
     </Button>
     <VBox alignment="CENTER" layoutX="306.0" layoutY="5.0" prefHeight="50.0" prefWidth="87.0">
-        <Label fx:id="PlacedStudents_Company_lbl" text="OpenAI">
+        <Label fx:id="PlacedStudents_Company_lbl" styleClass="id" text="OpenAI">
            <font>
                <Font name="System Bold" size="12.0" />
            </font>

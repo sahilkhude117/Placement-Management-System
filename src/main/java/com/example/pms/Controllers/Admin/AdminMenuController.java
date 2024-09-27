@@ -5,6 +5,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.animation.ScaleTransition;
+import javafx.util.Duration;
+
 
 public class AdminMenuController implements Initializable {
     public Button dashboard_btn;
@@ -33,6 +36,14 @@ public class AdminMenuController implements Initializable {
         // Add listeners to buttons
         addListeners();
 
+        createButtonHoverEffect(dashboard_btn);
+        createButtonHoverEffect(analytics_btn);
+        createButtonHoverEffect(placedStud_btn);
+        createButtonHoverEffect(stud_btn);
+        createButtonHoverEffect(company_btn);
+        createButtonHoverEffect(profile_btn);
+        createButtonHoverEffect(report_btn);
+
         // Set the default selected button (optional)
         handleButtonSelection(dashboard_btn); // Default to dashboard on startup
     }
@@ -51,37 +62,35 @@ public class AdminMenuController implements Initializable {
 
     private void addListeners() {
         dashboard_btn.setOnAction(event -> {
-            handleButtonSelection(dashboard_btn);
             onDashboard();
         });
         analytics_btn.setOnAction(event -> {
-            handleButtonSelection(analytics_btn);
             onAnalytics();
         });
         placedStud_btn.setOnAction(event -> {
-            handleButtonSelection(placedStud_btn);
+
             onPlacedStudents();
         });
         stud_btn.setOnAction(event -> {
-            handleButtonSelection(stud_btn);
+
             onStudents();
         });
         company_btn.setOnAction(event -> {
-            handleButtonSelection(company_btn);
+
             onCompany();
         });
         profile_btn.setOnAction(event -> {
-            handleButtonSelection(profile_btn);
+
             onProfile();
         });
         report_btn.setOnAction(event -> {
-            handleButtonSelection(report_btn);
+
             onReport();
         });
     }
 
     // Method to change button styles
-    private void handleButtonSelection(Button clickedButton) {
+    public void handleButtonSelection(Button clickedButton) {
         if (selectedButton != null) {
             // Remove the selected style from the previously selected button
             selectedButton.getStyleClass().remove("admin-menu-button-selected");
@@ -97,38 +106,61 @@ public class AdminMenuController implements Initializable {
     }
 
     private void onDashboard() {
+        handleButtonSelection(dashboard_btn);
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.DASHBOARD);
     }
 
     private void onAnalytics() {
+        handleButtonSelection(analytics_btn);
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.ANALYTICS);
     }
 
     private void onStudents() {
+        handleButtonSelection(stud_btn);
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.STUDENTS);
     }
 
     private void onPlacedStudents() {
+        handleButtonSelection(placedStud_btn);
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.PLACED_STUDENTS);
     }
 
     private void onCompany() {
+        handleButtonSelection(company_btn);
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.COMPANY);
     }
 
     private void onProfile() {
+        handleButtonSelection(profile_btn);
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.PROFILE);
     }
 
     private void onReport() {
-        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.ADD_COMPANIES);
+        handleButtonSelection(report_btn);
+        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.REPORTS);
     }
 
+    private void createButtonHoverEffect(Button button) {
+        // Create scale transition for the button
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), button);
+        scaleIn.setToX(1.1);  // Scale to 110% on hover
+        scaleIn.setToY(1.1);  // Scale to 110% on hover
 
-    // Method to update menu selection programmatically
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), button);
+        scaleOut.setToX(1);   // Scale back to normal when not hovered
+        scaleOut.setToY(1);   // Scale back to normal when not hovered
+
+        // Set hover event listeners
+        button.setOnMouseEntered(e -> scaleIn.playFromStart());
+        button.setOnMouseExited(e -> scaleOut.playFromStart());
+    }
+
     public void updateMenuSelection(AdminMenuOptions selectedOption) {
         // Reset all button styles to the default
-        handleButtonSelection(null); // Reset the previous selection
+        if (selectedButton != null) {
+            selectedButton.getStyleClass().remove("admin-menu-button-selected");
+            selectedButton.getStyleClass().add("admin-menu-button"); // Reapply default style
+        }
 
         // Apply selected styles based on the selected option
         switch (selectedOption) {
@@ -138,23 +170,23 @@ public class AdminMenuController implements Initializable {
             case ANALYTICS:
                 handleButtonSelection(analytics_btn);
                 break;
-            case STUDENTS:
+            case STUDENTS, ADD_STUDENTS, VIEW_STUDENTS, EDIT_STUDENTS:
                 handleButtonSelection(stud_btn);
                 break;
-            case PLACED_STUDENTS:
+            case PLACED_STUDENTS, ADD_PLACED_STUDENTS, VIEW_PLACED_STUDENTS, EDIT_PLACED_STUDENTS:
                 handleButtonSelection(placedStud_btn);
                 break;
-            case COMPANY:
+            case COMPANY ,ADD_COMPANIES, VIEW_COMPANIES, EDIT_COMPANIES:
                 handleButtonSelection(company_btn);
                 break;
             case PROFILE:
                 handleButtonSelection(profile_btn);
                 break;
-            case ADD_COMPANIES:
+            case REPORTS:
                 handleButtonSelection(report_btn);
                 break;
-            // Add cases for other menu items if needed
         }
     }
+
 
 }

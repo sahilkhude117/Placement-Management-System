@@ -15,6 +15,7 @@ module com.example.pms {
     requires com.almasb.fxgl.all;
     requires java.desktop;
     requires jbcrypt;
+    requires java.mail;
 
     // Open specific packages to JavaFX for reflection
     opens com.example.pms to javafx.fxml;

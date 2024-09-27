@@ -44,6 +44,7 @@ public class ViewFactory {
     private AnchorPane viewCompanyView;
 
     private AnchorPane profileView;
+    private AnchorPane reportsView;
 
 
     public ViewFactory() {
@@ -305,6 +306,17 @@ public class ViewFactory {
         return profileView;
     }
 
+    public AnchorPane getReportsView(){
+        if (reportsView == null) {
+            try {
+                reportsView = new FXMLLoader(getClass().getResource("/Fxml/Admin/Reports.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return reportsView;
+    }
+
 
 
     public void showLoginWindow() {
@@ -333,7 +345,7 @@ public class ViewFactory {
         }
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/Images/logo1.jpg"))));
+        //stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/Images/logo1.jpg"))));
         stage.setResizable(false);
         stage.setTitle("Placement Management System");
         stage.show();

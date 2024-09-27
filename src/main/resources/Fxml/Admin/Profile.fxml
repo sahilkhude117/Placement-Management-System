@@ -26,9 +26,9 @@
         </VBox>
         <VBox alignment="CENTER" fillWidth="false" prefHeight="200.0" prefWidth="400.0" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
             <AnchorPane prefHeight="410.0" prefWidth="366.0" styleClass="VBox">
-                <Label layoutX="16.0" layoutY="36.0" text="Username" AnchorPane.leftAnchor="15.0">
+                <Label layoutX="16.0" layoutY="36.0" text="Username" translateY="3.0" AnchorPane.leftAnchor="15.0">
                     <font>
-                        <Font size="14.0" />
+                        <Font size="16.0" />
                     </font>
                 </Label>
                 <Label layoutX="14.0" layoutY="90.0" text="Email" translateY="10.0" AnchorPane.leftAnchor="15.0">
@@ -36,7 +36,10 @@
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <TextField fx:id="update_Email_fld" layoutX="14.0" layoutY="115.0" prefHeight="26.0" prefWidth="322.0" promptText="Enter Email" styleClass="textfield" translateY="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                <TextField fx:id="update_Email_fld" layoutX="14.0" layoutY="115.0" prefHeight="26.0" prefWidth="322.0" promptText="Enter Email" styleClass="textfield" translateY="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
                 <Label layoutX="16.0" layoutY="151.0" text="Old Password" translateY="15.0" AnchorPane.leftAnchor="15.0">
                     <font>
                         <Font size="14.0" />

@@ -36,6 +36,15 @@
     -fx-cursor: hand;
 }
 
+.admin-menu-button:hover {
+    -fx-background-color: white;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 12, 0, 0, 4);
+    -fx-pref-width: 160px;
+    -fx-pref-height: 40px;
+    -fx-padding: 10px 20px;
+}
+
 .admin-menu-button-selected {
     -fx-alignment: CENTER_LEFT;
     -fx-background-color: #6D31EDFF;
@@ -49,14 +58,17 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 15, 0, 0, 4);
 }
 
-.admin-menu-button:hover {
-    -fx-background-color: #f1f1f1;
+.admin-menu-button-selected:hover {
     -fx-cursor: hand;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 12, 0, 0, 4);
+    -fx-background-color: #6D31EDFF;
+    -fx-text-fill: white;
     -fx-pref-width: 160px;
     -fx-pref-height: 40px;
     -fx-padding: 10px 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 15, 0, 0, 4);
 }
+
+
 
 
 .alertButton {
@@ -71,6 +83,7 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
     -fx-cursor: hand;
 }
+
 .alertButton:hover {
     -fx-background-color: red;
     -fx-cursor: hand;

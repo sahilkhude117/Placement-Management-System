@@ -849,6 +849,23 @@ public class DatabaseDriver {
     }
 
 
+    public boolean saveReport(String category, String subject, String description) {
+        String insertQuery = "INSERT INTO reports (category, subject, description) VALUES (?, ?, ?)";
+
+        try (PreparedStatement pstmt = this.connection.prepareStatement(insertQuery)) {
+
+            pstmt.setString(1, category);
+            pstmt.setString(2, subject);
+            pstmt.setString(3, description);
+
+            int rowsInserted = pstmt.executeUpdate();
+            return rowsInserted > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
 
 
